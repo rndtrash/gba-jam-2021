@@ -9,20 +9,15 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    steps:
-    - name: Install Docker
-      run: sudo apt-get install docker
-      
+    container: devkitpro/devkitarm:latest
+    steps:      
     - name: Checkout repository and submodules
       uses: actions/checkout@v2
       with:
         submodules: recursive
-        
-    - name: Pull DevKitARM Docker image
-      run: docker pull devkitpro/devkitarm
       
     - name: Make
-      run: docker run --rm -it -v "$PWD:/src" devkitpro/devkitarm make -C /src
+      run: make
       
     - name: Publish artifacts
       uses: actions/upload-artifact@v2
