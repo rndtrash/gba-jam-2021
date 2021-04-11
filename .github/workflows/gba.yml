@@ -12,9 +12,14 @@ jobs:
     container: devkitpro/devkitarm:latest
     steps:      
     - name: Checkout repository and submodules
-      uses: actions/checkout@v2
-      with:
-        submodules: recursive
+#TODO: uncomment when devkitarm will be updated to Debian Buster
+#      uses: actions/checkout@v2
+#      with:
+#        submodules: recursive
+      run: |
+        git clone --depth 1 https://github.com/$GITHUB_REPOSITORY.git .
+        git fetch origin $GITHUB_REF:temporary-ci-branch
+        git checkout $GITHUB_SHA
       
     - name: Make
       run: make
