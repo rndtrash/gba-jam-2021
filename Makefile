@@ -27,7 +27,7 @@ GRAPHICS    :=  graphics
 AUDIO       :=  audio
 ROMTITLE    :=  Trade Or Die
 ROMCODE     :=  TOD
-USERFLAGS   :=  -flto
+USERFLAGS   :=  -flto -O2
 
 #---------------------------------------------------------------------------------------------------------------------
 # Export absolute butano path:

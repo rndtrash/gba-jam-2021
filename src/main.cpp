@@ -1,6 +1,6 @@
 /*
 Trade or Die (TEMP NAME)
-Copyright (C) 2021  Ivan Kuzmenko
+Copyright (C) 2021 Ivan Kuzmenko
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -17,19 +17,20 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
 #include "bn_core.h"
+#include "bn_bg_palettes.h"
 
 #include "scene.h"
 #include "tools.h"
 
 int main()
 {
-	m_testScene = TestScene();
-
 	bn::core::init();
+	bn::bg_palettes::set_transparent_color(bn::color(16, 16, 16));
 
-	ChangeScene(&m_testScene);
+	InitStaticVars();
+	ChangeScene(new TestScene());
 
-	while(true)
+	while (true)
 	{
 		currentScene->draw();
 		currentScene->update();
