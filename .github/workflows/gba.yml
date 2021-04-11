@@ -17,9 +17,10 @@ jobs:
 #      with:
 #        submodules: recursive
       run: |
-        git clone --depth 1 https://github.com/$GITHUB_REPOSITORY.git .
+        git clone https://github.com/$GITHUB_REPOSITORY.git .
         git fetch origin $GITHUB_REF:temporary-ci-branch
         git checkout $GITHUB_SHA
+        git submodule update --init --recursive
       
     - name: Make
       run: make
