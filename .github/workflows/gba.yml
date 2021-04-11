@@ -23,10 +23,10 @@ jobs:
         git submodule update --init --recursive
       
     - name: Make
-      run: make
+      run: make -j$(nproc)
       
     - name: Publish artifacts
       uses: actions/upload-artifact@v2
       with:
         name: GBA ROM
-        path: \*.gba
+        path: ./*.gba
