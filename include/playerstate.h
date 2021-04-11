@@ -1,0 +1,4 @@
+#ifndef TOD_PLAYERSTATE_H
+#define TOD_PLAYERSTATE_H
+
+#endif // TOD_PLAYERSTATE_H

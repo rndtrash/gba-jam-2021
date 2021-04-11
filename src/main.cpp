@@ -1,5 +1,5 @@
 /*
-GBA Jam 2021 entry (TEMP NAME)
+Trade or Die (TEMP NAME)
 Copyright (C) 2021  Ivan Kuzmenko
 
 This program is free software: you can redistribute it and/or modify
@@ -18,12 +18,22 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 #include "bn_core.h"
 
+#include "scene.h"
+#include "tools.h"
+
 int main()
 {
-    bn::core::init();
+	m_testScene = TestScene();
 
-    while(true)
-    {
-        bn::core::update();
-    }
+	bn::core::init();
+
+	ChangeScene(&m_testScene);
+
+	while(true)
+	{
+		currentScene->draw();
+		currentScene->update();
+
+		bn::core::update();
+	}
 }

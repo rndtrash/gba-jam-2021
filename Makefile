@@ -16,7 +16,7 @@
 #
 # All directories are specified relative to the project directory where the makefile is found.
 #---------------------------------------------------------------------------------------------------------------------
-TARGET      :=  rndtrash-gbagj2021
+TARGET      :=  tradeordie
 BUILD       :=  build
 LIBBUTANO   :=  libs/butano/butano
 PYTHON      :=  python3
@@ -25,8 +25,8 @@ INCLUDES    :=  include
 DATA        :=  data
 GRAPHICS    :=  graphics
 AUDIO       :=  audio
-ROMTITLE    :=  PEEPEEPOOPOO
-ROMCODE     :=  2P2P
+ROMTITLE    :=  Trade Or Die
+ROMCODE     :=  TOD
 USERFLAGS   :=  -flto
 
 #---------------------------------------------------------------------------------------------------------------------
